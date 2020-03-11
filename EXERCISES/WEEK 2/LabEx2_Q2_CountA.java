@@ -3,15 +3,15 @@ public class LabEx2_Q2_CountA
 {
 public static void main(String[] args)
 {
-   String word;
+   String sentence;
    int n = 0;
         
-   Scanner sc = new Scanner (System.in);
+   Scanner sc = new Scanner (System.in);//allow input from keyboard
         
    System.out.print("Enter a sentence\t:");
-   word = sc.nextLine();
+   sentence= sc.nextLine();
         
-   n=CountA(word);
+   n=CountA(sentence);
                 
    System.out.println("The number of A character is "+ n);
 
