@@ -1,13 +1,15 @@
-public class LabEx2_Q3_PrintReverse {
-public static void main(String[] args){
+import java.util.Scanner;
+public class LabEx2_Q3_PrintReverse 
+{
+    public static void main(String[]args)
+    {
+      Scanner sc = new Scanner(System.in);
+      System.out.println("Please enter a sentence : ");
+      String sent = sc.nextLine();
 
-   String sentence = new String ("Joey Chin Shu Hui, SME BANK");   
-   StringBuilder rev = new StringBuilder();
-   
-   rev.append(sentence);       // append the String ayat to StringBuilder rev
-   rev = rev.reverse();    // reverse the StringBuilder rev
-   System.out.println("The above sentence if reversed will be..."+ rev);  // display the reversed String ayat
-   
-   }
+        for (int i = sent.length() - 1; i >= 0; i--) 
+        {
+            System.out.print(sent.charAt(i));
+        }
+    }
 }
-
