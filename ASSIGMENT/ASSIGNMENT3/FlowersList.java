@@ -1,4 +1,6 @@
 
+import java.io.File;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -54,12 +56,20 @@ int row,col;
         SEARCH = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
+        EXIT = new javax.swing.JButton();
+        SAVETOFILE = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel1.setText("Flower Name : ");
+
+        jTextFlowerName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFlowerNameActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Flower Colour :");
 
@@ -190,6 +200,20 @@ int row,col;
         });
         jScrollPane2.setViewportView(jTable2);
 
+        EXIT.setText("EXIT");
+        EXIT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EXITActionPerformed(evt);
+            }
+        });
+
+        SAVETOFILE.setText("SAVE TO FILE");
+        SAVETOFILE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SAVETOFILEActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -199,7 +223,11 @@ int row,col;
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2))
+                    .addComponent(jScrollPane2)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(SAVETOFILE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(EXIT)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -210,8 +238,12 @@ int row,col;
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(EXIT)
+                    .addComponent(SAVETOFILE))
+                .addContainerGap())
         );
 
         pack();
@@ -253,6 +285,7 @@ int row,col;
         }
         //reset
         clearField();
+
     }//GEN-LAST:event_ADDActionPerformed
     
     private void clearField(){
@@ -316,17 +349,30 @@ int row,col;
         // TODO add your handling code here:
     }//GEN-LAST:event_jCBFlowerSuitActionPerformed
 
+    private void jTextFlowerNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFlowerNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFlowerNameActionPerformed
+
+    private void EXITActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EXITActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_EXITActionPerformed
+
+    private void SAVETOFILEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SAVETOFILEActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SAVETOFILEActionPerformed
+
     public static void main(String[] args) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FlowersList().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new FlowersList().setVisible(true);
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ADD;
     private javax.swing.JButton DELETE;
     private javax.swing.JButton EDIT;
+    private javax.swing.JButton EXIT;
+    private javax.swing.JButton SAVETOFILE;
     private javax.swing.JButton SEARCH;
     private javax.swing.JComboBox<String> jCBFlowerSuit;
     private javax.swing.JLabel jLabel1;
